@@ -1,8 +1,9 @@
-# ScPo UG Econometrics
+# ScPo Applied Data Analysis for Public Policy Studies
 
-This is the git repo for the UG Econometrics book taught to 2nd year students at SciencesPo.
+This is the git repo for the "Applied Data Analysis for Public Policy Studies" book taught to MPA students at SciencesPo. This book is derived from ["Introduction to Econometrics with R"] (https://scpoecon.github.io/ScPoEconometrics/) by Florian Oswald and Jean-Marc Robin and Vincent Viers (2018).
 
-**Slides?** If you are looking for the slides, they are in the [ScPoEconometrics-Slides](https://github.com/ScPoEcon/ScPoEconometrics-Slides) repo.
+
+**Slides?** If you are looking for the slides, they are in the [ScPoEconometrics-Slides](https://github.com/michelefioretti/ScPoEconometrics-Slides) repo.
 
 ## Contents
 
@@ -12,12 +13,12 @@ This is the git repo for the UG Econometrics book taught to 2nd year students at
 4. [How to Contribute](#contribution-workflow)
 5. [License and Copyright](#license)
 
-## Status
+<-- ## Status
 
 **Tests on MacOS and Linux**: [![Build Status](https://travis-ci.org/ScPoEcon/ScPoEconometrics.svg?branch=master)](https://travis-ci.org/ScPoEcon/ScPoEconometrics)
 
 **Tests on Windows**: [![Build status](https://ci.appveyor.com/api/projects/status/9ctm2rneexsid3t2?svg=true)](https://ci.appveyor.com/project/FlorianOswald/scpoeconometrics)
-
+-->
 
 
 ## Usage and Installation
@@ -74,27 +75,6 @@ There is some relevant material in the [teachers](/teachers) folder. In particul
 As outlined in the license section, you are free to use and re-use any parts of the content as you see fit. For instance, you could re-use our slides, and modify them, or publish a different version of our textbook (with proper attribution). However, it could be valuable to integrate your changes/additions to the project. In this case, please read on in the next section about how to make contributions.
 
 
-## Contribution Workflow - Developers only!
-
-This section is only for people who want to contribute code to this project.
-
-1. fork this repository
-1. clone your fork to your computer: `git clone url_of_your_fork`
-1. Start to work on your things on a new branch: `git checkout -b new_branch`
-1. **commit** your work to that new branch! 
-1. Place your new stuff on top of the most recent `upstream/master`:
-	1. add the upstream repo as a remote: `git remote add upstream git@github.com:ScPoEcon/ScPoEconometrics.git`
-	1. Use the `rebase` command
-    ```
-    # git add your stuff
-    # git commit your stuff
-    git fetch upstream   # get stuff from upstream
-    git rebase upstream/master  # merge upstream master and put your commits on top of it
-    ```
-1. push that branch to your fork: `git push origin new_branch`
-1. create pull request on `upstream` (from your fork at github.com)
-
-
 ## Technology
 
 The book is made using bookdown.
@@ -118,21 +98,21 @@ You are free to:
 ```R
 > citation("ScPoEconometrics")
 
-Oswald F, Robin J, Viers V (2018).
-Introduction to Econometrics with
-R. SciencesPo Department of
+Fioretti M (2020).
+Applied Data Analysis for Public Policy Studies. 
+SciencesPo Department of
 Economics, Paris, France. <URL:
-https://scpoecon.github.io/ScPoEconometrics/>.
+https://github.com/michelefioretti/ScPoEconometrics.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
-    title = {Introduction to Econometrics with R},
-    author = {Florian Oswald and Jean-Marc Robin and Vincent Viers},
+    title = {Applied Data Analysis for Public Policy Studies},
+    author = {Fioretti Michele},
     organization = {SciencesPo Department of Economics},
     address = {Paris, France},
-    year = {2018},
-    url = {https://scpoecon.github.io/ScPoEconometrics/},
+    year = {2020},
+    url = {https://github.com/michelefioretti/ScPoEconometrics/},
   }
 
 ```
