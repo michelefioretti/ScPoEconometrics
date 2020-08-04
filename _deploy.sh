@@ -7,8 +7,8 @@ set -e
 [ "${TRAVIS_PULL_REQUEST}" != "false" ] && exit 0
 
 
-git config --global user.email "florian.oswald@gmail.com"
-git config --global user.name "Florian Oswald"
+git config --global user.email "fioretti.mi@gmail.com"
+git config --global user.name "Fioretti Michele"
 
 git clone -b gh-pages https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git book-output
 cd book-output

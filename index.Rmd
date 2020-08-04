@@ -8,7 +8,7 @@ documentclass: book
 bibliography: ["packages.bib","book.bib"]
 biblio-style: apalike
 link-citations: yes
-url: 'https\://github.com/michelefioretti/ScPoEconometrics'
+url: 'https\://michelefioretti.github.io/ScPoEconometrics/'
 favicon: "favicon.gif"
 github-repo: michelefioretti/ScPoEconometrics
 description: "MPA Data Analysis Online Book. Almost no Maths."
@@ -61,7 +61,7 @@ Teaching Assistant: Florentin Cognie - email: florentin dot cognie at sciencespo
 
 ### Open Source {-}
 
-The book and all other content for this course are hosted under an open source license on github. You can contribute to the book by just clicking on the appropriate *edit* symbol in the top bar of this page. The material in this book comes from "Introduction to Econometrics with R" by Oswald F, Robin J, Viers V (2018), which can be found at [github repository](https://github.com/ScPoEcon/ScPoEconometrics).
+The book and all other content for this course are hosted under an open source license on github. You can contribute to the book by just clicking on the appropriate *edit* symbol in the top bar of this page. The material in this book comes from "Introduction to Econometrics with R" by lorian Oswald and Jean-Marc Robin and Vincent Viers (2018), which can be found at [github repository](https://github.com/ScPoEcon/ScPoEconometrics).
 
 ### Assessments {-}
 

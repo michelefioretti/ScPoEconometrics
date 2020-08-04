@@ -103,8 +103,8 @@ You are free to:
 Fioretti M (2020).
 Applied Data Analysis for Public Policy Studies. 
 SciencesPo Department of
-Economics, Paris, France. <URL:
-https://github.com/michelefioretti/ScPoEconometrics.
+Economics, Paris, France. 
+<URL: https://github.com/michelefioretti/ScPoEconometrics>.
 
 A BibTeX entry for LaTeX users is
 
