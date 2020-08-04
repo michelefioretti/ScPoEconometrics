@@ -2,7 +2,7 @@
 
 This is the git repo for the "Applied Data Analysis for Public Policy Studies" book taught to MPA students at SciencesPo. 
 
-This book is derived from [Introduction to Econometrics with R] (https://scpoecon.github.io/ScPoEconometrics/) by Florian Oswald and Jean-Marc Robin and Vincent Viers (2018).
+This book is derived from ["Introduction to Econometrics with R"](https://scpoecon.github.io/ScPoEconometrics) by Florian Oswald and Jean-Marc Robin and Vincent Viers (2018).
 
 
 **Slides?** If you are looking for the slides, they are in the [ScPoEconometrics-Slides](https://github.com/michelefioretti/ScPoEconometrics-Slides) repo.
