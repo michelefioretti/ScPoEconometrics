@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1598287134874.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3743451351",
+    "id" : "EB0F94DF",
+    "lastKnownWriteTime" : 1598276650,
+    "last_content_update" : 1598276650,
+    "path" : "~/Dropbox/Sciences Po/02 - Courses/03_Data Analysis/01_GitHub/ScPoEconometrics/09-RDD.Rmd",
+    "project_path" : "09-RDD.Rmd",
+    "properties" : {
+        "cursorPosition" : "6,354",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 13,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1598287092990.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3824430707",
+    "id" : "52F40310",
+    "lastKnownWriteTime" : 1598276650,
+    "last_content_update" : 1598276650,
+    "path" : "~/Dropbox/Sciences Po/02 - Courses/03_Data Analysis/01_GitHub/ScPoEconometrics/03-linear-reg.Rmd",
+    "project_path" : "03-linear-reg.Rmd",
+    "properties" : {
+        "cursorPosition" : "21,10",
+        "scrollLine" : "14"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

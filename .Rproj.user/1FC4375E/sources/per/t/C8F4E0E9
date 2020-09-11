@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1598277167292.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2383536981",
+    "id" : "C8F4E0E9",
+    "lastKnownWriteTime" : 1598276650,
+    "last_content_update" : 1598276650,
+    "path" : "~/Dropbox/Sciences Po/02 - Courses/03_Data Analysis/01_GitHub/ScPoEconometrics/_build.sh",
+    "project_path" : "_build.sh",
+    "properties" : {
+        "cursorPosition" : "7,69",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "sh"
+}

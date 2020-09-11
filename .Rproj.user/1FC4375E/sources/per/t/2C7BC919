@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1598287108288.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "349184722",
+    "id" : "2C7BC919",
+    "lastKnownWriteTime" : 1598276650,
+    "last_content_update" : 1598276650,
+    "path" : "~/Dropbox/Sciences Po/02 - Courses/03_Data Analysis/01_GitHub/ScPoEconometrics/05-Categorial-Vars.Rmd",
+    "project_path" : "05-Categorial-Vars.Rmd",
+    "properties" : {
+        "cursorPosition" : "9,219",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

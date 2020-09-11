@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1598295417043.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1855922188",
+    "id" : "7C9121AD",
+    "lastKnownWriteTime" : 1598295562,
+    "last_content_update" : 1598295562435,
+    "path" : "~/Dropbox/Sciences Po/02 - Courses/03_Data Analysis/01_GitHub/ScPoEconometrics-Slides/chapter1/chapter1.Rmd",
+    "project_path" : "../ScPoEconometrics-Slides/chapter1/chapter1.Rmd",
+    "properties" : {
+        "cursorPosition" : "901,69",
+        "scrollLine" : "891"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 15,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
