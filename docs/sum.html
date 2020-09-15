@@ -24,7 +24,7 @@
 <meta name="author" content="Michele Fioretti" />
 
 
-<meta name="date" content="2020-08-24" />
+<meta name="date" content="2020-09-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -155,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.4" data-path="R-intro.html"><a href="R-intro.html#getting-help"><i class="fa fa-check"></i><b>1.4</b> Getting Help</a></li>
 <li class="chapter" data-level="1.5" data-path="R-intro.html"><a href="R-intro.html#installing-packages"><i class="fa fa-check"></i><b>1.5</b> Installing Packages</a></li>
 <li class="chapter" data-level="1.6" data-path="R-intro.html"><a href="R-intro.html#code-output"><i class="fa fa-check"></i><b>1.6</b> <code>Code</code> vs Output in this Book</a></li>
-<li class="chapter" data-level="1.7" data-path="R-intro.html"><a href="R-intro.html#install-package"><i class="fa fa-check"></i><b>1.7</b> <code>ScPoEconometrics</code> Package</a></li>
+<li class="chapter" data-level="1.7" data-path="R-intro.html"><a href="R-intro.html#install-package"><i class="fa fa-check"></i><b>1.7</b> <code>ScPoApps</code> Package</a></li>
 <li class="chapter" data-level="1.8" data-path="R-intro.html"><a href="R-intro.html#data-types"><i class="fa fa-check"></i><b>1.8</b> Data Types</a></li>
 <li class="chapter" data-level="1.9" data-path="R-intro.html"><a href="R-intro.html#data-structures"><i class="fa fa-check"></i><b>1.9</b> Data Structures</a></li>
 <li class="chapter" data-level="1.10" data-path="R-intro.html"><a href="R-intro.html#dataframes"><i class="fa fa-check"></i><b>1.10</b> Data Frames</a></li>
@@ -482,7 +482,7 @@ Figure 2.2: visual estimation on <span class="math inline">\(\sigma\)</span>. Th
 <h3><span class="header-section-number">2.4.1</span> Reading <code>.csv</code> data in the <em>tidy</em> way</h3>
 <p>We could have used the <code>read_csv()</code> function from the <code>readr</code> package to read our example dataset from the previous chapter. The <code>readr</code> function <code>read_csv()</code> has a number of advantages over the built-in <code>read.csv</code>. For example, it is much faster reading larger data. <a href="https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html">It also uses the <code>tibble</code> package to read the data as a tibble.</a> <strong>A <code>tibble</code> is simply a data frame that prints with sanity.</strong> Notice in the output below that we are given additional information such as dimension and variable type.</p>
 <div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb255-1" data-line-number="1"><span class="kw">library</span>(readr)  <span class="co"># you need `install.packages(&quot;readr&quot;)` once!</span></a>
-<a class="sourceLine" id="cb255-2" data-line-number="2">path =<span class="st"> </span><span class="kw">system.file</span>(<span class="dt">package=</span><span class="st">&quot;ScPoEconometrics&quot;</span>,<span class="st">&quot;datasets&quot;</span>,<span class="st">&quot;example-data.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb255-2" data-line-number="2">path =<span class="st"> </span><span class="kw">system.file</span>(<span class="dt">package=</span><span class="st">&quot;ScPoApps&quot;</span>,<span class="st">&quot;datasets&quot;</span>,<span class="st">&quot;example-data.csv&quot;</span>)</a>
 <a class="sourceLine" id="cb255-3" data-line-number="3">example_data_from_disk =<span class="st"> </span><span class="kw">read_csv</span>(path)</a></code></pre></div>
 </div>
 <div id="tidy-data.frames-are-tibbles" class="section level3">
@@ -491,33 +491,33 @@ Figure 2.2: visual estimation on <span class="math inline">\(\sigma\)</span>. Th
 <div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb256-1" data-line-number="1"><span class="kw">data</span>(mpg,<span class="dt">package =</span> <span class="st">&quot;ggplot2&quot;</span>)  <span class="co"># load dataset `mpg` from `ggplot2` package</span></a>
 <a class="sourceLine" id="cb256-2" data-line-number="2"><span class="kw">head</span>(mpg, <span class="dt">n =</span> <span class="dv">10</span>)</a></code></pre></div>
 <pre><code>#OUT&gt; # A tibble: 10 x 11
-#OUT&gt;    manufacturer model      displ  year   cyl trans      drv     cty   hwy fl    class  
-#OUT&gt;    &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
-#OUT&gt;  1 audi         a4           1.8  1999     4 auto(l5)   f        18    29 p     compact
-#OUT&gt;  2 audi         a4           1.8  1999     4 manual(m5) f        21    29 p     compact
-#OUT&gt;  3 audi         a4           2    2008     4 manual(m6) f        20    31 p     compact
-#OUT&gt;  4 audi         a4           2    2008     4 auto(av)   f        21    30 p     compact
-#OUT&gt;  5 audi         a4           2.8  1999     6 auto(l5)   f        16    26 p     compact
-#OUT&gt;  6 audi         a4           2.8  1999     6 manual(m5) f        18    26 p     compact
-#OUT&gt;  7 audi         a4           3.1  2008     6 auto(av)   f        18    27 p     compact
-#OUT&gt;  8 audi         a4 quattro   1.8  1999     4 manual(m5) 4        18    26 p     compact
-#OUT&gt;  9 audi         a4 quattro   1.8  1999     4 auto(l5)   4        16    25 p     compact
-#OUT&gt; 10 audi         a4 quattro   2    2008     4 manual(m6) 4        20    28 p     compact</code></pre>
+#OUT&gt;    manufacturer model      displ  year   cyl trans     drv     cty   hwy fl    class 
+#OUT&gt;    &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; 
+#OUT&gt;  1 audi         a4           1.8  1999     4 auto(l5)  f        18    29 p     compa…
+#OUT&gt;  2 audi         a4           1.8  1999     4 manual(m… f        21    29 p     compa…
+#OUT&gt;  3 audi         a4           2    2008     4 manual(m… f        20    31 p     compa…
+#OUT&gt;  4 audi         a4           2    2008     4 auto(av)  f        21    30 p     compa…
+#OUT&gt;  5 audi         a4           2.8  1999     6 auto(l5)  f        16    26 p     compa…
+#OUT&gt;  6 audi         a4           2.8  1999     6 manual(m… f        18    26 p     compa…
+#OUT&gt;  7 audi         a4           3.1  2008     6 auto(av)  f        18    27 p     compa…
+#OUT&gt;  8 audi         a4 quattro   1.8  1999     4 manual(m… 4        18    26 p     compa…
+#OUT&gt;  9 audi         a4 quattro   1.8  1999     4 auto(l5)  4        16    25 p     compa…
+#OUT&gt; 10 audi         a4 quattro   2    2008     4 manual(m… 4        20    28 p     compa…</code></pre>
 <p>The function <code>head()</code> will display the first <code>n</code> observations of the data frame, as we have seen. The <code>head()</code> function was more useful before tibbles. Notice that <code>mpg</code> is a tibble already, so the output from <code>head()</code> indicates there are only <code>10</code> observations. Note that this applies to <code>head(mpg, n = 10)</code> and not <code>mpg</code> itself. Also note that tibbles print a limited number of rows and columns by default. The last line of the printed output indicates with rows and columns were omitted.</p>
 <div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb258-1" data-line-number="1">mpg</a></code></pre></div>
 <pre><code>#OUT&gt; # A tibble: 234 x 11
-#OUT&gt;    manufacturer model      displ  year   cyl trans      drv     cty   hwy fl    class  
-#OUT&gt;    &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
-#OUT&gt;  1 audi         a4           1.8  1999     4 auto(l5)   f        18    29 p     compact
-#OUT&gt;  2 audi         a4           1.8  1999     4 manual(m5) f        21    29 p     compact
-#OUT&gt;  3 audi         a4           2    2008     4 manual(m6) f        20    31 p     compact
-#OUT&gt;  4 audi         a4           2    2008     4 auto(av)   f        21    30 p     compact
-#OUT&gt;  5 audi         a4           2.8  1999     6 auto(l5)   f        16    26 p     compact
-#OUT&gt;  6 audi         a4           2.8  1999     6 manual(m5) f        18    26 p     compact
-#OUT&gt;  7 audi         a4           3.1  2008     6 auto(av)   f        18    27 p     compact
-#OUT&gt;  8 audi         a4 quattro   1.8  1999     4 manual(m5) 4        18    26 p     compact
-#OUT&gt;  9 audi         a4 quattro   1.8  1999     4 auto(l5)   4        16    25 p     compact
-#OUT&gt; 10 audi         a4 quattro   2    2008     4 manual(m6) 4        20    28 p     compact
+#OUT&gt;    manufacturer model      displ  year   cyl trans     drv     cty   hwy fl    class 
+#OUT&gt;    &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; 
+#OUT&gt;  1 audi         a4           1.8  1999     4 auto(l5)  f        18    29 p     compa…
+#OUT&gt;  2 audi         a4           1.8  1999     4 manual(m… f        21    29 p     compa…
+#OUT&gt;  3 audi         a4           2    2008     4 manual(m… f        20    31 p     compa…
+#OUT&gt;  4 audi         a4           2    2008     4 auto(av)  f        21    30 p     compa…
+#OUT&gt;  5 audi         a4           2.8  1999     6 auto(l5)  f        16    26 p     compa…
+#OUT&gt;  6 audi         a4           2.8  1999     6 manual(m… f        18    26 p     compa…
+#OUT&gt;  7 audi         a4           3.1  2008     6 auto(av)  f        18    27 p     compa…
+#OUT&gt;  8 audi         a4 quattro   1.8  1999     4 manual(m… 4        18    26 p     compa…
+#OUT&gt;  9 audi         a4 quattro   1.8  1999     4 auto(l5)  4        16    25 p     compa…
+#OUT&gt; 10 audi         a4 quattro   2    2008     4 manual(m… 4        20    28 p     compa…
 #OUT&gt; # … with 224 more rows</code></pre>
 <p>Let’s look at <code>str</code> as well to get familiar with the content of the data:</p>
 <div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb260-1" data-line-number="1"><span class="kw">str</span>(mpg)</a></code></pre></div>
@@ -538,26 +538,35 @@ Figure 2.2: visual estimation on <span class="math inline">\(\sigma\)</span>. Th
 <div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb262-1" data-line-number="1">?mpg</a></code></pre></div>
 <p>Working with tibbles is mostly the same as working with plain data.frames:</p>
 <div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb263-1" data-line-number="1"><span class="kw">names</span>(mpg)</a></code></pre></div>
-<pre><code>#OUT&gt;  [1] &quot;manufacturer&quot; &quot;model&quot;        &quot;displ&quot;        &quot;year&quot;         &quot;cyl&quot;          &quot;trans&quot;        &quot;drv&quot;          &quot;cty&quot;         
-#OUT&gt;  [9] &quot;hwy&quot;          &quot;fl&quot;           &quot;class&quot;</code></pre>
+<pre><code>#OUT&gt;  [1] &quot;manufacturer&quot; &quot;model&quot;        &quot;displ&quot;        &quot;year&quot;         &quot;cyl&quot;         
+#OUT&gt;  [6] &quot;trans&quot;        &quot;drv&quot;          &quot;cty&quot;          &quot;hwy&quot;          &quot;fl&quot;          
+#OUT&gt; [11] &quot;class&quot;</code></pre>
 <div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb265-1" data-line-number="1">mpg<span class="op">$</span>year</a></code></pre></div>
-<pre><code>#OUT&gt;   [1] 1999 1999 2008 2008 1999 1999 2008 1999 1999 2008 2008 1999 1999 2008 2008 1999 2008 2008 2008 2008 2008 1999 2008 1999 1999
-#OUT&gt;  [26] 2008 2008 2008 2008 2008 1999 1999 1999 2008 1999 2008 2008 1999 1999 1999 1999 2008 2008 2008 1999 1999 2008 2008 2008 2008
-#OUT&gt;  [51] 1999 1999 2008 2008 2008 1999 1999 1999 2008 2008 2008 1999 2008 1999 2008 2008 2008 2008 2008 2008 1999 1999 2008 1999 1999
-#OUT&gt;  [76] 1999 2008 1999 1999 1999 2008 2008 1999 1999 1999 1999 1999 2008 1999 2008 1999 1999 2008 2008 1999 1999 2008 2008 2008 1999
-#OUT&gt; [101] 1999 1999 1999 1999 2008 2008 2008 2008 1999 1999 2008 2008 1999 1999 2008 1999 1999 2008 2008 2008 2008 2008 2008 2008 1999
-#OUT&gt; [126] 1999 2008 2008 2008 2008 1999 2008 2008 1999 1999 1999 2008 1999 2008 2008 1999 1999 1999 2008 2008 2008 2008 1999 1999 2008
-#OUT&gt; [151] 1999 1999 2008 2008 1999 1999 1999 2008 2008 1999 1999 2008 2008 2008 2008 1999 1999 1999 1999 2008 2008 2008 2008 1999 1999
-#OUT&gt; [176] 1999 1999 2008 2008 1999 1999 2008 2008 1999 1999 2008 1999 1999 2008 2008 1999 1999 2008 1999 1999 1999 2008 2008 1999 2008
-#OUT&gt; [201] 1999 1999 2008 1999 1999 2008 2008 1999 1999 2008 2008 1999 1999 1999 1999 2008 2008 2008 2008 1999 1999 1999 1999 1999 1999
-#OUT&gt; [226] 2008 2008 1999 1999 2008 2008 1999 1999 2008</code></pre>
+<pre><code>#OUT&gt;   [1] 1999 1999 2008 2008 1999 1999 2008 1999 1999 2008 2008 1999 1999 2008 2008 1999
+#OUT&gt;  [17] 2008 2008 2008 2008 2008 1999 2008 1999 1999 2008 2008 2008 2008 2008 1999 1999
+#OUT&gt;  [33] 1999 2008 1999 2008 2008 1999 1999 1999 1999 2008 2008 2008 1999 1999 2008 2008
+#OUT&gt;  [49] 2008 2008 1999 1999 2008 2008 2008 1999 1999 1999 2008 2008 2008 1999 2008 1999
+#OUT&gt;  [65] 2008 2008 2008 2008 2008 2008 1999 1999 2008 1999 1999 1999 2008 1999 1999 1999
+#OUT&gt;  [81] 2008 2008 1999 1999 1999 1999 1999 2008 1999 2008 1999 1999 2008 2008 1999 1999
+#OUT&gt;  [97] 2008 2008 2008 1999 1999 1999 1999 1999 2008 2008 2008 2008 1999 1999 2008 2008
+#OUT&gt; [113] 1999 1999 2008 1999 1999 2008 2008 2008 2008 2008 2008 2008 1999 1999 2008 2008
+#OUT&gt; [129] 2008 2008 1999 2008 2008 1999 1999 1999 2008 1999 2008 2008 1999 1999 1999 2008
+#OUT&gt; [145] 2008 2008 2008 1999 1999 2008 1999 1999 2008 2008 1999 1999 1999 2008 2008 1999
+#OUT&gt; [161] 1999 2008 2008 2008 2008 1999 1999 1999 1999 2008 2008 2008 2008 1999 1999 1999
+#OUT&gt; [177] 1999 2008 2008 1999 1999 2008 2008 1999 1999 2008 1999 1999 2008 2008 1999 1999
+#OUT&gt; [193] 2008 1999 1999 1999 2008 2008 1999 2008 1999 1999 2008 1999 1999 2008 2008 1999
+#OUT&gt; [209] 1999 2008 2008 1999 1999 1999 1999 2008 2008 2008 2008 1999 1999 1999 1999 1999
+#OUT&gt; [225] 1999 2008 2008 1999 1999 2008 2008 1999 1999 2008</code></pre>
 <div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb267-1" data-line-number="1">mpg<span class="op">$</span>hwy</a></code></pre></div>
-<pre><code>#OUT&gt;   [1] 29 29 31 30 26 26 27 26 25 28 27 25 25 25 25 24 25 23 20 15 20 17 17 26 23 26 25 24 19 14 15 17 27 30 26 29 26 24 24 22 22 24
-#OUT&gt;  [43] 24 17 22 21 23 23 19 18 17 17 19 19 12 17 15 17 17 12 17 16 18 15 16 12 17 17 16 12 15 16 17 15 17 17 18 17 19 17 19 19 17 17
-#OUT&gt;  [85] 17 16 16 17 15 17 26 25 26 24 21 22 23 22 20 33 32 32 29 32 34 36 36 29 26 27 30 31 26 26 28 26 29 28 27 24 24 24 22 19 20 17
-#OUT&gt; [127] 12 19 18 14 15 18 18 15 17 16 18 17 19 19 17 29 27 31 32 27 26 26 25 25 17 17 20 18 26 26 27 28 25 25 24 27 25 26 23 26 26 26
-#OUT&gt; [169] 26 25 27 25 27 20 20 19 17 20 17 29 27 31 31 26 26 28 27 29 31 31 26 26 27 30 33 35 37 35 15 18 20 20 22 17 19 18 20 29 26 29
-#OUT&gt; [211] 29 24 44 29 26 29 29 29 29 23 24 44 41 29 26 28 29 29 29 28 29 26 26 26</code></pre>
+<pre><code>#OUT&gt;   [1] 29 29 31 30 26 26 27 26 25 28 27 25 25 25 25 24 25 23 20 15 20 17 17 26 23 26
+#OUT&gt;  [27] 25 24 19 14 15 17 27 30 26 29 26 24 24 22 22 24 24 17 22 21 23 23 19 18 17 17
+#OUT&gt;  [53] 19 19 12 17 15 17 17 12 17 16 18 15 16 12 17 17 16 12 15 16 17 15 17 17 18 17
+#OUT&gt;  [79] 19 17 19 19 17 17 17 16 16 17 15 17 26 25 26 24 21 22 23 22 20 33 32 32 29 32
+#OUT&gt; [105] 34 36 36 29 26 27 30 31 26 26 28 26 29 28 27 24 24 24 22 19 20 17 12 19 18 14
+#OUT&gt; [131] 15 18 18 15 17 16 18 17 19 19 17 29 27 31 32 27 26 26 25 25 17 17 20 18 26 26
+#OUT&gt; [157] 27 28 25 25 24 27 25 26 23 26 26 26 26 25 27 25 27 20 20 19 17 20 17 29 27 31
+#OUT&gt; [183] 31 26 26 28 27 29 31 31 26 26 27 30 33 35 37 35 15 18 20 20 22 17 19 18 20 29
+#OUT&gt; [209] 26 29 29 24 44 29 26 29 29 29 29 23 24 44 41 29 26 28 29 29 29 28 29 26 26 26</code></pre>
 <p>Subsetting is also similar to dataframe. Here, we find fuel efficient vehicles earning over 35 miles per gallon and only display <code>manufacturer</code>, <code>model</code> and <code>year</code>.</p>
 <div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb269-1" data-line-number="1"><span class="co"># mpg[row condition, col condition]</span></a>
 <a class="sourceLine" id="cb269-2" data-line-number="2">mpg[mpg<span class="op">$</span>hwy <span class="op">&gt;</span><span class="st"> </span><span class="dv">35</span>, <span class="kw">c</span>(<span class="st">&quot;manufacturer&quot;</span>, <span class="st">&quot;model&quot;</span>, <span class="st">&quot;year&quot;</span>)]</a></code></pre></div>
@@ -624,7 +633,7 @@ Figure 2.2: visual estimation on <span class="math inline">\(\sigma\)</span>. Th
 <div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb276-1" data-line-number="1"><span class="kw">library</span>(readxl)  <span class="co"># load the library</span></a>
 <a class="sourceLine" id="cb276-2" data-line-number="2"><span class="co"># Notice that if you installed the R package of this book,</span></a>
 <a class="sourceLine" id="cb276-3" data-line-number="3"><span class="co"># you have the .xls data file already at </span></a>
-<a class="sourceLine" id="cb276-4" data-line-number="4"><span class="co"># `system.file(package=&quot;ScPoEconometrics&quot;,</span></a>
+<a class="sourceLine" id="cb276-4" data-line-number="4"><span class="co"># `system.file(package=&quot;ScPoApps&quot;,</span></a>
 <a class="sourceLine" id="cb276-5" data-line-number="5"><span class="co">#                        &quot;datasets&quot;,&quot;demo_gind.xls&quot;)`</span></a>
 <a class="sourceLine" id="cb276-6" data-line-number="6"><span class="co"># otherwise:</span></a>
 <a class="sourceLine" id="cb276-7" data-line-number="7"><span class="co"># * download the file to your computer</span></a>
@@ -634,25 +643,25 @@ Figure 2.2: visual estimation on <span class="math inline">\(\sigma\)</span>. Th
 <a class="sourceLine" id="cb276-11" data-line-number="11"></a>
 <a class="sourceLine" id="cb276-12" data-line-number="12"><span class="co"># total population in raw format</span></a>
 <a class="sourceLine" id="cb276-13" data-line-number="13">tot_pop_raw =<span class="st"> </span><span class="kw">read_excel</span>(</a>
-<a class="sourceLine" id="cb276-14" data-line-number="14">                <span class="dt">path =</span> <span class="kw">system.file</span>(<span class="dt">package=</span><span class="st">&quot;ScPoEconometrics&quot;</span>,</a>
+<a class="sourceLine" id="cb276-14" data-line-number="14">                <span class="dt">path =</span> <span class="kw">system.file</span>(<span class="dt">package=</span><span class="st">&quot;ScPoApps&quot;</span>,</a>
 <a class="sourceLine" id="cb276-15" data-line-number="15">                                    <span class="st">&quot;datasets&quot;</span>,<span class="st">&quot;demo_gind.xls&quot;</span>), </a>
 <a class="sourceLine" id="cb276-16" data-line-number="16">                <span class="dt">sheet=</span><span class="st">&quot;Data&quot;</span>, <span class="co"># which sheet</span></a>
 <a class="sourceLine" id="cb276-17" data-line-number="17">                <span class="dt">range=</span><span class="st">&quot;A9:K68&quot;</span>)  <span class="co"># which excel cell range to read</span></a>
 <a class="sourceLine" id="cb276-18" data-line-number="18"><span class="kw">names</span>(tot_pop_raw)[<span class="dv">1</span>] &lt;-<span class="st"> &quot;Country&quot;</span>   <span class="co"># lets rename the first column</span></a>
 <a class="sourceLine" id="cb276-19" data-line-number="19">tot_pop_raw</a></code></pre></div>
 <pre><code>#OUT&gt; # A tibble: 59 x 11
-#OUT&gt;    Country                                `2008`    `2009`    `2010`   `2011`   `2012`   `2013`   `2014`   `2015`   `2016`   `2017`  
-#OUT&gt;    &lt;chr&gt;                                  &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   
-#OUT&gt;  1 European Union (current composition)   500297033 502090235 5031706… 5029648… 5040479… 5051630… 5070113… 5085401… 5102771… 5115226…
-#OUT&gt;  2 European Union (without United Kingdo… 438725386 440047892 4406604… 4399423… 4405526… 4412577… 4426601… 4436649… 4448946… 4457140…
-#OUT&gt;  3 European Union (before the accession … 495985066 497780439 4988677… 4986749… 4997719… 5009008… 5027645… 5043147… 5060865… 5073684…
-#OUT&gt;  4 Euro area (19 countries)               333096775 334470255 3352664… 3345725… 3352889… 3360449… 3375406… 3385602… 3398800… 3407204…
-#OUT&gt;  5 Euro area (18 countries)               329884170 331286399 3321244… 3315200… 3322852… 3330730… 3345971… 3356389… 3369914… 3378725…
-#OUT&gt;  6 Belgium                                10666866  10753080  10839905 11000638 11075889 11137974 11180840 11237274 11311117 11351727
-#OUT&gt;  7 Bulgaria                               7518002   7467119   7421766  7369431  7327224  7284552  7245677  7202198  7153784  7101859 
-#OUT&gt;  8 Czech Republic                         10343422  10425783  10462088 10486731 10505445 10516125 10512419 10538275 10553843 10578820
-#OUT&gt;  9 Denmark                                5475791   5511451   5534738  5560628  5580516  5602628  5627235  5659715  5707251  5748769 
-#OUT&gt; 10 Germany (until 1990 former territory … 82217837  82002356  81802257 80222065 80327900 80523746 80767463 81197537 82175684 82521653
+#OUT&gt;    Country    `2008`  `2009`  `2010` `2011` `2012` `2013` `2014` `2015` `2016` `2017`
+#OUT&gt;    &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; 
+#OUT&gt;  1 European … 500297… 502090… 50317… 50296… 50404… 50516… 50701… 50854… 51027… 51152…
+#OUT&gt;  2 European … 438725… 440047… 44066… 43994… 44055… 44125… 44266… 44366… 44489… 44571…
+#OUT&gt;  3 European … 495985… 497780… 49886… 49867… 49977… 50090… 50276… 50431… 50608… 50736…
+#OUT&gt;  4 Euro area… 333096… 334470… 33526… 33457… 33528… 33604… 33754… 33856… 33988… 34072…
+#OUT&gt;  5 Euro area… 329884… 331286… 33212… 33152… 33228… 33307… 33459… 33563… 33699… 33787…
+#OUT&gt;  6 Belgium    106668… 107530… 10839… 11000… 11075… 11137… 11180… 11237… 11311… 11351…
+#OUT&gt;  7 Bulgaria   7518002 7467119 74217… 73694… 73272… 72845… 72456… 72021… 71537… 71018…
+#OUT&gt;  8 Czech Rep… 103434… 104257… 10462… 10486… 10505… 10516… 10512… 10538… 10553… 10578…
+#OUT&gt;  9 Denmark    5475791 5511451 55347… 55606… 55805… 56026… 56272… 56597… 57072… 57487…
+#OUT&gt; 10 Germany (… 822178… 820023… 81802… 80222… 80327… 80523… 80767… 81197… 82175… 82521…
 #OUT&gt; # … with 49 more rows</code></pre>
 <p>This shows a <code>tibble</code>, which we encountered just above. The column names are <code>Country,2008,2009,...</code>, and the rows are numbered <code>1,2,3,...</code>. Notice, in particular, that <em>all</em> columns seem to be of type <code>&lt;chr&gt;</code>, i.e. characters - a string, not a number! We’ll have to fix that, as this is clearly numeric data.</p>
 <div id="tidyr" class="section level4">
@@ -748,13 +757,13 @@ Figure 2.2: visual estimation on <span class="math inline">\(\sigma\)</span>. Th
 <a class="sourceLine" id="cb285-8" data-line-number="8"><span class="co"># let&#39;s see top 5</span></a>
 <a class="sourceLine" id="cb285-9" data-line-number="9">top5</a></code></pre></div>
 <pre><code>#OUT&gt; # A tibble: 5 x 3
-#OUT&gt;   Country                                                                           year     counts
-#OUT&gt;   &lt;chr&gt;                                                                             &lt;chr&gt;     &lt;int&gt;
-#OUT&gt; 1 European Economic Area (EU28  - current composition, plus IS, LI, NO)             2017  517157147
-#OUT&gt; 2 European Economic Area (EU28  - current composition, plus IS, LI, NO)             2016  515861313
-#OUT&gt; 3 European Economic Area (EU28  - current composition, plus IS, LI, NO)             2015  514073062
-#OUT&gt; 4 European Economic Area (EU27 -  before the accession of Croatia, plus IS, LI, NO) 2017  513002934
-#OUT&gt; 5 European Economic Area (EU28  - current composition, plus IS, LI, NO)             2014  512482100</code></pre>
+#OUT&gt;   Country                                                              year    counts
+#OUT&gt;   &lt;chr&gt;                                                                &lt;chr&gt;    &lt;int&gt;
+#OUT&gt; 1 European Economic Area (EU28  - current composition, plus IS, LI, N… 2017    5.17e8
+#OUT&gt; 2 European Economic Area (EU28  - current composition, plus IS, LI, N… 2016    5.16e8
+#OUT&gt; 3 European Economic Area (EU28  - current composition, plus IS, LI, N… 2015    5.14e8
+#OUT&gt; 4 European Economic Area (EU27 -  before the accession of Croatia, pl… 2017    5.13e8
+#OUT&gt; 5 European Economic Area (EU28  - current composition, plus IS, LI, N… 2014    5.12e8</code></pre>
 <div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb287-1" data-line-number="1"><span class="co"># and bottom 5</span></a>
 <a class="sourceLine" id="cb287-2" data-line-number="2">bottom5</a></code></pre></div>
 <pre><code>#OUT&gt; # A tibble: 5 x 3
@@ -776,13 +785,13 @@ Figure 2.2: visual estimation on <span class="math inline">\(\sigma\)</span>. Th
 <a class="sourceLine" id="cb289-8" data-line-number="8">bottom5 =<span class="st"> </span>topbottom <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">top_n</span>(<span class="op">-</span><span class="dv">5</span>)</a>
 <a class="sourceLine" id="cb289-9" data-line-number="9">top5</a></code></pre></div>
 <pre><code>#OUT&gt; # A tibble: 5 x 2
-#OUT&gt;   Country                                                                           mean_count
-#OUT&gt;   &lt;chr&gt;                                                                                  &lt;dbl&gt;
-#OUT&gt; 1 European Economic Area (EU28  - current composition, plus IS, LI, NO)             514029320 
-#OUT&gt; 2 European Economic Area (EU27 -  before the accession of Croatia, plus IS, LI, NO) 509813491.
-#OUT&gt; 3 European Union (current composition)                                              508502858.
-#OUT&gt; 4 European Union (before the accession of Croatia)                                  504287028.
-#OUT&gt; 5 European Union (without United Kingdom)                                           443638309.</code></pre>
+#OUT&gt;   Country                                                                  mean_count
+#OUT&gt;   &lt;chr&gt;                                                                         &lt;dbl&gt;
+#OUT&gt; 1 European Economic Area (EU28  - current composition, plus IS, LI, NO)    514029320 
+#OUT&gt; 2 European Economic Area (EU27 -  before the accession of Croatia, plus I… 509813491.
+#OUT&gt; 3 European Union (current composition)                                     508502858.
+#OUT&gt; 4 European Union (before the accession of Croatia)                         504287028.
+#OUT&gt; 5 European Union (without United Kingdom)                                  443638309.</code></pre>
 <div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb291-1" data-line-number="1">bottom5</a></code></pre></div>
 <pre><code>#OUT&gt; # A tibble: 5 x 2
 #OUT&gt;   Country       mean_count
@@ -864,7 +873,7 @@ Figure 2.2: visual estimation on <span class="math inline">\(\sigma\)</span>. Th
 <h4>Males and Females</h4>
 <p>Let’s look at the numbers by male and female population. They are in the same xls file, but at different cell ranges. Also, I just realised that the special character <code>:</code> indicates <em>missing</em> data. We can feed that to <code>read_excel</code> and that will spare us the need to convert data types afterwards. Let’s see:</p>
 <div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb296-1" data-line-number="1">females_raw =<span class="st"> </span><span class="kw">read_excel</span>(</a>
-<a class="sourceLine" id="cb296-2" data-line-number="2">                <span class="dt">path =</span> <span class="kw">system.file</span>(<span class="dt">package=</span><span class="st">&quot;ScPoEconometrics&quot;</span>,</a>
+<a class="sourceLine" id="cb296-2" data-line-number="2">                <span class="dt">path =</span> <span class="kw">system.file</span>(<span class="dt">package=</span><span class="st">&quot;ScPoApps&quot;</span>,</a>
 <a class="sourceLine" id="cb296-3" data-line-number="3">                                    <span class="st">&quot;datasets&quot;</span>,<span class="st">&quot;demo_gind.xls&quot;</span>), </a>
 <a class="sourceLine" id="cb296-4" data-line-number="4">                <span class="dt">sheet=</span><span class="st">&quot;Data&quot;</span>, <span class="co"># which sheet</span></a>
 <a class="sourceLine" id="cb296-5" data-line-number="5">                <span class="dt">range=</span><span class="st">&quot;A141:K200&quot;</span>,  <span class="co"># which excel cell range to read</span></a>
@@ -872,22 +881,22 @@ Figure 2.2: visual estimation on <span class="math inline">\(\sigma\)</span>. Th
 <a class="sourceLine" id="cb296-7" data-line-number="7"><span class="kw">names</span>(females_raw)[<span class="dv">1</span>] &lt;-<span class="st"> &quot;Country&quot;</span>   <span class="co"># lets rename the first column</span></a>
 <a class="sourceLine" id="cb296-8" data-line-number="8">females_raw</a></code></pre></div>
 <pre><code>#OUT&gt; # A tibble: 59 x 11
-#OUT&gt;    Country                                   `2008`    `2009`   `2010`   `2011`   `2012`   `2013`   `2014`   `2015`   `2016`   `2017`
-#OUT&gt;    &lt;chr&gt;                                      &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
-#OUT&gt;  1 European Union (current composition)   256306485 257178433   2.58e8   2.58e8   2.58e8   2.59e8   2.60e8   2.60e8   2.61e8   2.61e8
-#OUT&gt;  2 European Union (without United Kingdo… 224899187 225552613   2.26e8   2.26e8   2.26e8   2.26e8   2.27e8   2.27e8   2.28e8   2.28e8
-#OUT&gt;  3 European Union (before the accession … 254071506 254945404   2.55e8   2.56e8   2.56e8   2.57e8   2.57e8   2.58e8   2.59e8   2.59e8
-#OUT&gt;  4 Euro area (19 countries)               170579892 171269855   1.72e8   1.72e8   1.72e8   1.72e8   1.73e8   1.73e8   1.74e8   1.74e8
-#OUT&gt;  5 Euro area (18 countries)               168854706 169559351   1.70e8   1.70e8   1.70e8   1.71e8   1.71e8   1.72e8   1.72e8   1.73e8
-#OUT&gt;  6 Belgium                                  5442557   5484429   5.53e6   5.60e6   5.64e6   5.67e6   5.69e6   5.71e6   5.74e6   5.76e6
-#OUT&gt;  7 Bulgaria                                 3857635   3831264   3.81e6   3.78e6   3.76e6   3.74e6   3.72e6   3.70e6   3.68e6   3.65e6
-#OUT&gt;  8 Czech Republic                           5278305   5309105   5.33e6   5.34e6   5.35e6   5.35e6   5.35e6   5.36e6   5.37e6   5.38e6
-#OUT&gt;  9 Denmark                                  2763125   2779431   2.79e6   2.80e6   2.81e6   2.82e6   2.83e6   2.85e6   2.87e6   2.89e6
-#OUT&gt; 10 Germany (until 1990 former territory …  41943545  41818073   4.17e7   4.11e7   4.11e7   4.11e7   4.12e7   4.14e7   4.17e7   4.18e7
+#OUT&gt;    Country     `2008`  `2009` `2010` `2011` `2012` `2013` `2014` `2015` `2016` `2017`
+#OUT&gt;    &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+#OUT&gt;  1 European …  2.56e8  2.57e8 2.58e8 2.58e8 2.58e8 2.59e8 2.60e8 2.60e8 2.61e8 2.61e8
+#OUT&gt;  2 European …  2.25e8  2.26e8 2.26e8 2.26e8 2.26e8 2.26e8 2.27e8 2.27e8 2.28e8 2.28e8
+#OUT&gt;  3 European …  2.54e8  2.55e8 2.55e8 2.56e8 2.56e8 2.57e8 2.57e8 2.58e8 2.59e8 2.59e8
+#OUT&gt;  4 Euro area…  1.71e8  1.71e8 1.72e8 1.72e8 1.72e8 1.72e8 1.73e8 1.73e8 1.74e8 1.74e8
+#OUT&gt;  5 Euro area…  1.69e8  1.70e8 1.70e8 1.70e8 1.70e8 1.71e8 1.71e8 1.72e8 1.72e8 1.73e8
+#OUT&gt;  6 Belgium     5.44e6  5.48e6 5.53e6 5.60e6 5.64e6 5.67e6 5.69e6 5.71e6 5.74e6 5.76e6
+#OUT&gt;  7 Bulgaria    3.86e6  3.83e6 3.81e6 3.78e6 3.76e6 3.74e6 3.72e6 3.70e6 3.68e6 3.65e6
+#OUT&gt;  8 Czech Rep…  5.28e6  5.31e6 5.33e6 5.34e6 5.35e6 5.35e6 5.35e6 5.36e6 5.37e6 5.38e6
+#OUT&gt;  9 Denmark     2.76e6  2.78e6 2.79e6 2.80e6 2.81e6 2.82e6 2.83e6 2.85e6 2.87e6 2.89e6
+#OUT&gt; 10 Germany (…  4.19e7  4.18e7 4.17e7 4.11e7 4.11e7 4.11e7 4.12e7 4.14e7 4.17e7 4.18e7
 #OUT&gt; # … with 49 more rows</code></pre>
 <p>You can see that <code>R</code> now correctly read the numbers as such, after we told it that the <code>:</code> character has the special <em>missing</em> meaning: before, it <em>coerced</em> the entire <code>2008</code> column (for example) to be of type <code>chr</code> after it hit the first <code>:</code>. We had to manually convert the column back to <code>numeric</code>, in the process automatically coercing the <code>:</code>s into <code>NA</code>. Now we addressed that issue directly. Let’s also get the male data in the same way:</p>
 <div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb298-1" data-line-number="1">males_raw =<span class="st"> </span><span class="kw">read_excel</span>(</a>
-<a class="sourceLine" id="cb298-2" data-line-number="2">                <span class="dt">path =</span> <span class="kw">system.file</span>(<span class="dt">package=</span><span class="st">&quot;ScPoEconometrics&quot;</span>,</a>
+<a class="sourceLine" id="cb298-2" data-line-number="2">                <span class="dt">path =</span> <span class="kw">system.file</span>(<span class="dt">package=</span><span class="st">&quot;ScPoApps&quot;</span>,</a>
 <a class="sourceLine" id="cb298-3" data-line-number="3">                                    <span class="st">&quot;datasets&quot;</span>,<span class="st">&quot;demo_gind.xls&quot;</span>), </a>
 <a class="sourceLine" id="cb298-4" data-line-number="4">                <span class="dt">sheet=</span><span class="st">&quot;Data&quot;</span>, <span class="co"># which sheet</span></a>
 <a class="sourceLine" id="cb298-5" data-line-number="5">                <span class="dt">range=</span><span class="st">&quot;A75:K134&quot;</span>,  <span class="co"># which excel cell range to read</span></a>

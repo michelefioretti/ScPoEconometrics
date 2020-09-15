@@ -24,7 +24,7 @@
 <meta name="author" content="Michele Fioretti" />
 
 
-<meta name="date" content="2020-08-24" />
+<meta name="date" content="2020-09-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -155,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.4" data-path="R-intro.html"><a href="R-intro.html#getting-help"><i class="fa fa-check"></i><b>1.4</b> Getting Help</a></li>
 <li class="chapter" data-level="1.5" data-path="R-intro.html"><a href="R-intro.html#installing-packages"><i class="fa fa-check"></i><b>1.5</b> Installing Packages</a></li>
 <li class="chapter" data-level="1.6" data-path="R-intro.html"><a href="R-intro.html#code-output"><i class="fa fa-check"></i><b>1.6</b> <code>Code</code> vs Output in this Book</a></li>
-<li class="chapter" data-level="1.7" data-path="R-intro.html"><a href="R-intro.html#install-package"><i class="fa fa-check"></i><b>1.7</b> <code>ScPoEconometrics</code> Package</a></li>
+<li class="chapter" data-level="1.7" data-path="R-intro.html"><a href="R-intro.html#install-package"><i class="fa fa-check"></i><b>1.7</b> <code>ScPoApps</code> Package</a></li>
 <li class="chapter" data-level="1.8" data-path="R-intro.html"><a href="R-intro.html#data-types"><i class="fa fa-check"></i><b>1.8</b> Data Types</a></li>
 <li class="chapter" data-level="1.9" data-path="R-intro.html"><a href="R-intro.html#data-structures"><i class="fa fa-check"></i><b>1.9</b> Data Structures</a></li>
 <li class="chapter" data-level="1.10" data-path="R-intro.html"><a href="R-intro.html#dataframes"><i class="fa fa-check"></i><b>1.10</b> Data Frames</a></li>
@@ -310,54 +310,90 @@ Y_{ics} = \beta_0 + \beta_1 \text{small}_{cs} + \beta_2 \text{REG/A}_{cs} + \bet
 <a class="sourceLine" id="cb371-2" data-line-number="2"><span class="kw">library</span>(data.table)</a>
 <a class="sourceLine" id="cb371-3" data-line-number="3">x =<span class="st"> </span><span class="kw">as.data.table</span>(STAR)</a>
 <a class="sourceLine" id="cb371-4" data-line-number="4">x</a></code></pre></div>
-<pre><code>#OUT&gt;        gender ethnicity   birth        stark        star1        star2        star3 readk read1 read2 read3 mathk math1 math2 math3
-#OUT&gt;     1: female      afam 1979.50         &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;      regular    NA    NA    NA   580    NA    NA    NA   564
-#OUT&gt;     2: female      cauc 1980.00        small        small        small        small   447   507   568   587   473   538   579   593
-#OUT&gt;     3: female      afam 1979.75        small        small regular+aide regular+aide   450   579   588   644   536   592   579   639
-#OUT&gt;     4:   male      cauc 1979.75         &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;        small    NA    NA    NA   686    NA    NA    NA   667
-#OUT&gt;     5:   male      afam 1980.00 regular+aide         &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;   439    NA    NA    NA   463    NA    NA    NA
-#OUT&gt;    ---                                                                                                                             
-#OUT&gt; 11594:   male      cauc 1979.50        small        small        small        small   483   590   650   675   559   584   648   678
-#OUT&gt; 11595: female      cauc 1980.50      regular      regular      regular      regular   437   533   586   654   513   557   611   651
-#OUT&gt; 11596:   male      cauc 1980.00         &lt;NA&gt;      regular      regular      regular    NA   571   604   595    NA   557   620   672
-#OUT&gt; 11597: female      afam 1980.00      regular regular+aide      regular regular+aide   431   475   542   624   478   486   541   610
-#OUT&gt; 11598:   male      afam 1980.25 regular+aide regular+aide regular+aide regular+aide   421   468   571   580   449   486   568   577
-#OUT&gt;          lunchk   lunch1   lunch2   lunch3    schoolk    school1    school2    school3  degreek  degree1  degree2  degree3   ladderk
-#OUT&gt;     1:     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     free       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;   suburban     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt; bachelor      &lt;NA&gt;
-#OUT&gt;     2: non-free     free non-free     free      rural      rural      rural      rural bachelor bachelor bachelor bachelor    level1
-#OUT&gt;     3: non-free     &lt;NA&gt; non-free non-free   suburban   suburban   suburban   suburban bachelor   master bachelor bachelor    level1
-#OUT&gt;     4:     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt; non-free       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;      rural     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt; bachelor      &lt;NA&gt;
-#OUT&gt;     5:     free     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt; inner-city       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt; bachelor     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt; probation
-#OUT&gt;    ---                                                                                                                              
-#OUT&gt; 11594: non-free non-free non-free non-free      rural      rural      rural      rural bachelor   master   master   master    level1
-#OUT&gt; 11595:     free     free     free     free      rural      rural      rural      rural bachelor bachelor bachelor bachelor probation
-#OUT&gt; 11596:     &lt;NA&gt; non-free non-free non-free       &lt;NA&gt;   suburban   suburban   suburban     &lt;NA&gt; bachelor bachelor bachelor      &lt;NA&gt;
-#OUT&gt; 11597:     free     free     free     free inner-city inner-city inner-city inner-city bachelor bachelor bachelor   master    level1
-#OUT&gt; 11598: non-free     free     free non-free inner-city inner-city inner-city inner-city bachelor bachelor bachelor   master      &lt;NA&gt;
-#OUT&gt;          ladder1    ladder2    ladder3 experiencek experience1 experience2 experience3 tethnicityk tethnicity1 tethnicity2
-#OUT&gt;     1:      &lt;NA&gt;       &lt;NA&gt;     level1          NA          NA          NA          30        &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;
-#OUT&gt;     2:    level1 apprentice apprentice           7           7           3           1        cauc        cauc        cauc
-#OUT&gt;     3: probation     level1     level1          21          32           4           4        cauc        afam        afam
-#OUT&gt;     4:      &lt;NA&gt;       &lt;NA&gt;     level1          NA          NA          NA          10        &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;
-#OUT&gt;     5:      &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;           0          NA          NA          NA        cauc        &lt;NA&gt;        &lt;NA&gt;
-#OUT&gt;    ---                                                                                                                    
-#OUT&gt; 11594:    level1     level3     level1           8          13          15          17        cauc        cauc        cauc
-#OUT&gt; 11595:    level1 apprentice  notladder           0           7           1           7        cauc        cauc        cauc
-#OUT&gt; 11596: probation     level1     level1          NA           0           8          22        &lt;NA&gt;        cauc        cauc
-#OUT&gt; 11597:    level1     level1  probation          24          27           7          12        afam        afam        afam
-#OUT&gt; 11598:    level1     level1     level1           2          10          14          33        cauc        cauc        cauc
-#OUT&gt;        tethnicity3 systemk system1 system2 system3 schoolidk schoolid1 schoolid2 schoolid3
-#OUT&gt;     1:        cauc    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;      22      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;        54
-#OUT&gt;     2:        cauc      30      30      30      30        63        63        63        63
-#OUT&gt;     3:        cauc      11      11      11      11        20        20        20        20
-#OUT&gt;     4:        cauc    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       6      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;         8
-#OUT&gt;     5:        &lt;NA&gt;      11    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;        19      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
-#OUT&gt;    ---                                                                                    
-#OUT&gt; 11594:        cauc      21      21      21      21        49        49        49        49
-#OUT&gt; 11595:        cauc      33      33      33      33        67        67        67        67
-#OUT&gt; 11596:        cauc    &lt;NA&gt;      25      25      25      &lt;NA&gt;        58        58        58
-#OUT&gt; 11597:        cauc      11      11      11      11        22        22        22        22
-#OUT&gt; 11598:        afam      11      11      11      11        32        32        32        32</code></pre>
+<pre><code>#OUT&gt;        gender ethnicity   birth        stark        star1        star2        star3
+#OUT&gt;     1: female      afam 1979.50         &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;      regular
+#OUT&gt;     2: female      cauc 1980.00        small        small        small        small
+#OUT&gt;     3: female      afam 1979.75        small        small regular+aide regular+aide
+#OUT&gt;     4:   male      cauc 1979.75         &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;        small
+#OUT&gt;     5:   male      afam 1980.00 regular+aide         &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;
+#OUT&gt;    ---                                                                             
+#OUT&gt; 11594:   male      cauc 1979.50        small        small        small        small
+#OUT&gt; 11595: female      cauc 1980.50      regular      regular      regular      regular
+#OUT&gt; 11596:   male      cauc 1980.00         &lt;NA&gt;      regular      regular      regular
+#OUT&gt; 11597: female      afam 1980.00      regular regular+aide      regular regular+aide
+#OUT&gt; 11598:   male      afam 1980.25 regular+aide regular+aide regular+aide regular+aide
+#OUT&gt;        readk read1 read2 read3 mathk math1 math2 math3   lunchk   lunch1   lunch2
+#OUT&gt;     1:    NA    NA    NA   580    NA    NA    NA   564     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+#OUT&gt;     2:   447   507   568   587   473   538   579   593 non-free     free non-free
+#OUT&gt;     3:   450   579   588   644   536   592   579   639 non-free     &lt;NA&gt; non-free
+#OUT&gt;     4:    NA    NA    NA   686    NA    NA    NA   667     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+#OUT&gt;     5:   439    NA    NA    NA   463    NA    NA    NA     free     &lt;NA&gt;     &lt;NA&gt;
+#OUT&gt;    ---                                                                           
+#OUT&gt; 11594:   483   590   650   675   559   584   648   678 non-free non-free non-free
+#OUT&gt; 11595:   437   533   586   654   513   557   611   651     free     free     free
+#OUT&gt; 11596:    NA   571   604   595    NA   557   620   672     &lt;NA&gt; non-free non-free
+#OUT&gt; 11597:   431   475   542   624   478   486   541   610     free     free     free
+#OUT&gt; 11598:   421   468   571   580   449   486   568   577 non-free     free     free
+#OUT&gt;          lunch3    schoolk    school1    school2    school3  degreek  degree1
+#OUT&gt;     1:     free       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;   suburban     &lt;NA&gt;     &lt;NA&gt;
+#OUT&gt;     2:     free      rural      rural      rural      rural bachelor bachelor
+#OUT&gt;     3: non-free   suburban   suburban   suburban   suburban bachelor   master
+#OUT&gt;     4: non-free       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;      rural     &lt;NA&gt;     &lt;NA&gt;
+#OUT&gt;     5:     &lt;NA&gt; inner-city       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt; bachelor     &lt;NA&gt;
+#OUT&gt;    ---                                                                       
+#OUT&gt; 11594: non-free      rural      rural      rural      rural bachelor   master
+#OUT&gt; 11595:     free      rural      rural      rural      rural bachelor bachelor
+#OUT&gt; 11596: non-free       &lt;NA&gt;   suburban   suburban   suburban     &lt;NA&gt; bachelor
+#OUT&gt; 11597:     free inner-city inner-city inner-city inner-city bachelor bachelor
+#OUT&gt; 11598: non-free inner-city inner-city inner-city inner-city bachelor bachelor
+#OUT&gt;         degree2  degree3   ladderk   ladder1    ladder2    ladder3 experiencek
+#OUT&gt;     1:     &lt;NA&gt; bachelor      &lt;NA&gt;      &lt;NA&gt;       &lt;NA&gt;     level1          NA
+#OUT&gt;     2: bachelor bachelor    level1    level1 apprentice apprentice           7
+#OUT&gt;     3: bachelor bachelor    level1 probation     level1     level1          21
+#OUT&gt;     4:     &lt;NA&gt; bachelor      &lt;NA&gt;      &lt;NA&gt;       &lt;NA&gt;     level1          NA
+#OUT&gt;     5:     &lt;NA&gt;     &lt;NA&gt; probation      &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;           0
+#OUT&gt;    ---                                                                        
+#OUT&gt; 11594:   master   master    level1    level1     level3     level1           8
+#OUT&gt; 11595: bachelor bachelor probation    level1 apprentice  notladder           0
+#OUT&gt; 11596: bachelor bachelor      &lt;NA&gt; probation     level1     level1          NA
+#OUT&gt; 11597: bachelor   master    level1    level1     level1  probation          24
+#OUT&gt; 11598: bachelor   master      &lt;NA&gt;    level1     level1     level1           2
+#OUT&gt;        experience1 experience2 experience3 tethnicityk tethnicity1 tethnicity2
+#OUT&gt;     1:          NA          NA          30        &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;
+#OUT&gt;     2:           7           3           1        cauc        cauc        cauc
+#OUT&gt;     3:          32           4           4        cauc        afam        afam
+#OUT&gt;     4:          NA          NA          10        &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;
+#OUT&gt;     5:          NA          NA          NA        cauc        &lt;NA&gt;        &lt;NA&gt;
+#OUT&gt;    ---                                                                        
+#OUT&gt; 11594:          13          15          17        cauc        cauc        cauc
+#OUT&gt; 11595:           7           1           7        cauc        cauc        cauc
+#OUT&gt; 11596:           0           8          22        &lt;NA&gt;        cauc        cauc
+#OUT&gt; 11597:          27           7          12        afam        afam        afam
+#OUT&gt; 11598:          10          14          33        cauc        cauc        cauc
+#OUT&gt;        tethnicity3 systemk system1 system2 system3 schoolidk schoolid1 schoolid2
+#OUT&gt;     1:        cauc    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;      22      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+#OUT&gt;     2:        cauc      30      30      30      30        63        63        63
+#OUT&gt;     3:        cauc      11      11      11      11        20        20        20
+#OUT&gt;     4:        cauc    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;       6      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+#OUT&gt;     5:        &lt;NA&gt;      11    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;        19      &lt;NA&gt;      &lt;NA&gt;
+#OUT&gt;    ---                                                                          
+#OUT&gt; 11594:        cauc      21      21      21      21        49        49        49
+#OUT&gt; 11595:        cauc      33      33      33      33        67        67        67
+#OUT&gt; 11596:        cauc    &lt;NA&gt;      25      25      25      &lt;NA&gt;        58        58
+#OUT&gt; 11597:        cauc      11      11      11      11        22        22        22
+#OUT&gt; 11598:        afam      11      11      11      11        32        32        32
+#OUT&gt;        schoolid3
+#OUT&gt;     1:        54
+#OUT&gt;     2:        63
+#OUT&gt;     3:        20
+#OUT&gt;     4:         8
+#OUT&gt;     5:      &lt;NA&gt;
+#OUT&gt;    ---          
+#OUT&gt; 11594:        49
+#OUT&gt; 11595:        67
+#OUT&gt; 11596:        58
+#OUT&gt; 11597:        22
+#OUT&gt; 11598:        32</code></pre>
 <p>It’s a bit unfortunate to switch to data.table, but I haven’t been able to do what I wanted in dplyr :-( . Ok, here goes. First thing, you can see that this data set is <em>wide</em>. First thing we want to do is to make it <em>long</em>, i.e. reshape it so that if has 4 ID columns, and several measurements columns thereafter. First, let’s add a studend ID:</p>
 <div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb373-1" data-line-number="1">x[, ID <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(x)]  <span class="co"># add student ID</span></a>
 <a class="sourceLine" id="cb373-2" data-line-number="2"></a>
@@ -387,11 +423,16 @@ Y_{ics} = \beta_0 + \beta_1 \text{small}_{cs} + \beta_2 \text{REG/A}_{cs} + \bet
 <p>You can see here that for example pupil <code>ID=1</code> was not present in kindergarden, but joined later. We will only keep complete records, hence we drop those NAs:</p>
 <div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb375-1" data-line-number="1">mx =<span class="st"> </span>mx[<span class="kw">complete.cases</span>(mx)]</a>
 <a class="sourceLine" id="cb375-2" data-line-number="2">mx[ID<span class="op">==</span><span class="dv">2</span>]  <span class="co"># here is pupil number 2</span></a></code></pre></div>
-<pre><code>#OUT&gt;    ID gender ethnicity birth grade classtype read math schoolid   degree experience tethniticy    lunch
-#OUT&gt; 1:  2 female      cauc  1980 stark     small  447  473       63 bachelor          7       cauc non-free
-#OUT&gt; 2:  2 female      cauc  1980 star1     small  507  538       63 bachelor          7       cauc     free
-#OUT&gt; 3:  2 female      cauc  1980 star2     small  568  579       63 bachelor          3       cauc non-free
-#OUT&gt; 4:  2 female      cauc  1980 star3     small  587  593       63 bachelor          1       cauc     free</code></pre>
+<pre><code>#OUT&gt;    ID gender ethnicity birth grade classtype read math schoolid   degree experience
+#OUT&gt; 1:  2 female      cauc  1980 stark     small  447  473       63 bachelor          7
+#OUT&gt; 2:  2 female      cauc  1980 star1     small  507  538       63 bachelor          7
+#OUT&gt; 3:  2 female      cauc  1980 star2     small  568  579       63 bachelor          3
+#OUT&gt; 4:  2 female      cauc  1980 star3     small  587  593       63 bachelor          1
+#OUT&gt;    tethniticy    lunch
+#OUT&gt; 1:       cauc non-free
+#OUT&gt; 2:       cauc     free
+#OUT&gt; 3:       cauc non-free
+#OUT&gt; 4:       cauc     free</code></pre>
 <p>Ok, now on to standardizing those <code>read</code> and <code>math</code> scores. you can see they are on their kind of arbitrary SAT scales</p>
 <div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb377-1" data-line-number="1">mx[,<span class="kw">range</span>(read)]</a></code></pre></div>
 <pre><code>#OUT&gt; [1] 315 775</code></pre>

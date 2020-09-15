@@ -24,7 +24,7 @@
 <meta name="author" content="Michele Fioretti" />
 
 
-<meta name="date" content="2020-08-24" />
+<meta name="date" content="2020-09-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -155,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.4" data-path="R-intro.html"><a href="R-intro.html#getting-help"><i class="fa fa-check"></i><b>1.4</b> Getting Help</a></li>
 <li class="chapter" data-level="1.5" data-path="R-intro.html"><a href="R-intro.html#installing-packages"><i class="fa fa-check"></i><b>1.5</b> Installing Packages</a></li>
 <li class="chapter" data-level="1.6" data-path="R-intro.html"><a href="R-intro.html#code-output"><i class="fa fa-check"></i><b>1.6</b> <code>Code</code> vs Output in this Book</a></li>
-<li class="chapter" data-level="1.7" data-path="R-intro.html"><a href="R-intro.html#install-package"><i class="fa fa-check"></i><b>1.7</b> <code>ScPoEconometrics</code> Package</a></li>
+<li class="chapter" data-level="1.7" data-path="R-intro.html"><a href="R-intro.html#install-package"><i class="fa fa-check"></i><b>1.7</b> <code>ScPoApps</code> Package</a></li>
 <li class="chapter" data-level="1.8" data-path="R-intro.html"><a href="R-intro.html#data-types"><i class="fa fa-check"></i><b>1.8</b> Data Types</a></li>
 <li class="chapter" data-level="1.9" data-path="R-intro.html"><a href="R-intro.html#data-structures"><i class="fa fa-check"></i><b>1.9</b> Data Structures</a></li>
 <li class="chapter" data-level="1.10" data-path="R-intro.html"><a href="R-intro.html#dataframes"><i class="fa fa-check"></i><b>1.10</b> Data Frames</a></li>
@@ -322,7 +322,7 @@ Figure 5.1: regressing <span class="math inline">\(y \in \mathbb{R}\)</span> on 
 </p>
 </div>
 <p>In figure <a href="categorical-vars.html#fig:x-zero-one">5.1</a> we see that this regression simplifies to the straight line connecting the mean, or the <em>expected value</em> of <span class="math inline">\(y\)</span> when <span class="math inline">\(\text{is.female}_i = 0\)</span>, i.e. <span class="math inline">\(E[y|\text{is.female}_i=0]\)</span>, to the mean when <span class="math inline">\(\text{is.female}_i=1\)</span>, i.e. <span class="math inline">\(E[y|\text{is.female}_i=1]\)</span>. It is useful to remember that the <em>unconditional mean</em> of <span class="math inline">\(y\)</span>, i.e. <span class="math inline">\(E[y]\)</span>, is going to be the result of regressing <span class="math inline">\(y\)</span> only on an intercept, illustrated by the blue line. This line will always lie in between both conditional means. As indicated by the red arrow, the estimate of the coefficient on the dummy, <span class="math inline">\(b_1\)</span>, is equal to the difference in conditional means for both groups. You should look at our app now to deepen your understanding of what’s going on here:</p>
-<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb348-1" data-line-number="1"><span class="kw">library</span>(ScPoEconometrics)</a>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb348-1" data-line-number="1"><span class="kw">library</span>(ScPoApps)</a>
 <a class="sourceLine" id="cb348-2" data-line-number="2"><span class="kw">launchApp</span>(<span class="st">&quot;reg_dummy&quot;</span>)</a></code></pre></div>
 </div>
 <div id="dummy-and-continuous-variables" class="section level2">
@@ -339,7 +339,7 @@ b_0  + \hphantom{b_1} +b_2 \times \text{exper}_i + e_i &amp; \text{if is.female=
 \end{cases}
 \end{equation}\]</span></p>
 <p>so that the intercept is <span class="math inline">\(b_0 + b_1\)</span> for women but <span class="math inline">\(b_0\)</span> for men. We will see this in the real-world example below, but for now let’s see the effect of switching the dummy <em>on</em> and <em>off</em> in this app:</p>
-<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb349-1" data-line-number="1"><span class="kw">library</span>(ScPoEconometrics)</a>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb349-1" data-line-number="1"><span class="kw">library</span>(ScPoApps)</a>
 <a class="sourceLine" id="cb349-2" data-line-number="2"><span class="kw">launchApp</span>(<span class="st">&quot;reg_dummy_example&quot;</span>)</a></code></pre></div>
 </div>
 <div id="categorical-variables-in-r-factor" class="section level2">

@@ -24,7 +24,7 @@
 <meta name="author" content="Michele Fioretti" />
 
 
-<meta name="date" content="2020-08-24" />
+<meta name="date" content="2020-09-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -155,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.4" data-path="R-intro.html"><a href="R-intro.html#getting-help"><i class="fa fa-check"></i><b>1.4</b> Getting Help</a></li>
 <li class="chapter" data-level="1.5" data-path="R-intro.html"><a href="R-intro.html#installing-packages"><i class="fa fa-check"></i><b>1.5</b> Installing Packages</a></li>
 <li class="chapter" data-level="1.6" data-path="R-intro.html"><a href="R-intro.html#code-output"><i class="fa fa-check"></i><b>1.6</b> <code>Code</code> vs Output in this Book</a></li>
-<li class="chapter" data-level="1.7" data-path="R-intro.html"><a href="R-intro.html#install-package"><i class="fa fa-check"></i><b>1.7</b> <code>ScPoEconometrics</code> Package</a></li>
+<li class="chapter" data-level="1.7" data-path="R-intro.html"><a href="R-intro.html#install-package"><i class="fa fa-check"></i><b>1.7</b> <code>ScPoApps</code> Package</a></li>
 <li class="chapter" data-level="1.8" data-path="R-intro.html"><a href="R-intro.html#data-types"><i class="fa fa-check"></i><b>1.8</b> Data Types</a></li>
 <li class="chapter" data-level="1.9" data-path="R-intro.html"><a href="R-intro.html#data-structures"><i class="fa fa-check"></i><b>1.9</b> Data Structures</a></li>
 <li class="chapter" data-level="1.10" data-path="R-intro.html"><a href="R-intro.html#dataframes"><i class="fa fa-check"></i><b>1.10</b> Data Frames</a></li>
@@ -407,7 +407,7 @@ Figure 3.2: The best line and its SQUARED errors
 </p>
 </div>
 <p>We illustrate this in figure <a href="linreg.html#fig:line-squares">3.2</a>. This is the same data as in figure <a href="linreg.html#fig:line-arrows">3.1</a>, but instead of arrows of length <span class="math inline">\(e_i\)</span> for each observation <span class="math inline">\(i\)</span>, now we draw a square with side <span class="math inline">\(e_i\)</span>, i.e. an area of <span class="math inline">\(e_i^2\)</span>. We have two apps for you at this point, one where you have to try and find the best line by choosing <span class="math inline">\(b_0\)</span> and <span class="math inline">\(b_1\)</span>, only focusing on the sum of errors (and not their square), and a second one focusing on squared errors:</p>
-<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb311-1" data-line-number="1"><span class="kw">library</span>(ScPoEconometrics)</a>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb311-1" data-line-number="1"><span class="kw">library</span>(ScPoApps)</a>
 <a class="sourceLine" id="cb311-2" data-line-number="2"><span class="kw">launchApp</span>(<span class="st">&quot;reg_simple_arrows&quot;</span>)</a>
 <a class="sourceLine" id="cb311-3" data-line-number="3"><span class="kw">launchApp</span>(<span class="st">&quot;reg_simple&quot;</span>) <span class="co"># with squared errors</span></a>
 <a class="sourceLine" id="cb311-4" data-line-number="4"><span class="kw">launchApp</span>(<span class="st">&quot;SSR_cone&quot;</span>) <span class="co"># visualize the minimzation problem from above!</span></a></code></pre></div>
@@ -673,7 +673,7 @@ Figure 3.5: Wages vs Education from the wooldridge dataset wage1.
 <p>Looking at the top panel of figure <a href="linreg.html#fig:wooldridge-wages">3.5</a>, you notice two things: From the red ticks on the y axis, you see that wages are very concentrated at around 5 USD per hour, with fewer and fewer observations at higher rates; and second, that it seems that the hourly wage seems to increase with higher education levels. The bottom panel reinforces the first point, showing that the estimated pdf (probability density function) shown as a black line has a very long right tail: there are always fewer and fewer, but always larger and larger values of hourly wage in the data.</p>
 <div class="warning">
 <p>
-You have seen this shape of a distribution in the tutorial for chapter 2 already! Do you remember the name of this particular shape of a distribution? (why not type <code>ScPoEconometrics::runTutorial(‘chapter2’)</code>) to check?
+You have seen this shape of a distribution in the tutorial for chapter 2 already! Do you remember the name of this particular shape of a distribution? (why not type <code>ScPoApps::runTutorial(‘chapter2’)</code>) to check?
 </p>
 </div>
 <p><br></p>
@@ -920,7 +920,7 @@ b_0^* &amp;= \bar{y} -             b_1^* \frac{1}{N}\sum_{i=1}^N c \cdot x_i \\
       &amp;= b_0
 \end{align}\]</span></p>
 <p>That is, we change the slope by the <em>inverse</em> of the scaling factor applied to regressor <span class="math inline">\(x\)</span>, but the intercept is unaffected from this. You should play around for a while with our rescaling app to get a feeling for this:</p>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb329-1" data-line-number="1"><span class="kw">library</span>(ScPoEconometrics)</a>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb329-1" data-line-number="1"><span class="kw">library</span>(ScPoApps)</a>
 <a class="sourceLine" id="cb329-2" data-line-number="2"><span class="kw">launchApp</span>(<span class="st">&#39;Rescale&#39;</span>)</a></code></pre></div>
 </div>
 <div id="a-particular-rescaling-the-log-transform" class="section level2">
